@@ -24,10 +24,13 @@ interface CategoryChartProps {
 }
 
 export function CategoryChart({ data }: CategoryChartProps) {
-  const chartData = Object.entries(data).map(([name, value]) => ({
-    name,
-    value,
-  }))
+  const chartData = Object.entries(data)
+    .map(([name, value]) => ({
+      name,
+      value: Number(value),
+    }))
+    .filter(item => item.value > 0)
+    .sort((a, b) => b.value - a.value)
 
   if (chartData.length === 0) {
     return <div className="text-center text-muted-foreground py-8">No spending data available</div>
@@ -43,21 +46,34 @@ export function CategoryChart({ data }: CategoryChartProps) {
             cy="50%"
             labelLine={false}
             label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-            style={{ fill: "#ffffff", fontSize: "12px", fontWeight: "500" }}
-            outerRadius={80}
-            fill="#8884d8"
+            outerRadius={100}
             dataKey="value"
+            labelStyle={{ fill: "#ffffff", fontSize: "12px", fontWeight: "500" }}
           >
             {chartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell 
+                key={`cell-${index}`} 
+                fill={COLORS[index % COLORS.length]}
+                stroke="#000000"
+                strokeWidth={2}
+              />
             ))}
           </Pie>
           <Tooltip 
             formatter={(value: number) => formatCurrency(value, "AED")}
-            contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #00d4ff", borderRadius: "8px", color: "#ffffff" }}
+            contentStyle={{ 
+              backgroundColor: "#1a1a1a", 
+              border: "1px solid #00d4ff", 
+              borderRadius: "8px", 
+              color: "#ffffff" 
+            }}
             labelStyle={{ color: "#00d4ff" }}
           />
-          <Legend wrapperStyle={{ color: "#ffffff" }} />
+          <Legend 
+            wrapperStyle={{ color: "#ffffff" }}
+            iconType="square"
+            formatter={(value) => <span style={{ color: "#ffffff" }}>{value}</span>}
+          />
         </PieChart>
       </ResponsiveContainer>
     </div>
