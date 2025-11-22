@@ -3,7 +3,21 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"
 import { formatCurrency } from "@/lib/formatCurrency"
 
-const COLORS = ["#00d4ff", "#00ff88", "#ff00ff", "#ffaa00", "#00ffff", "#ff0080", "#00ffaa"]
+// Distinct colors for better expense differentiation
+const COLORS = [
+  "#00d4ff", // Cyan - Primary accent
+  "#ff6b6b", // Red - High priority expenses
+  "#4ecdc4", // Teal - Utilities
+  "#ffe66d", // Yellow - Food & Dining
+  "#a8e6cf", // Green - Shopping
+  "#ff8b94", // Pink - Entertainment
+  "#95e1d3", // Mint - Transportation
+  "#f38181", // Coral - Healthcare
+  "#aa96da", // Purple - Education
+  "#fcbad3", // Light Pink - Other
+  "#ffd3a5", // Peach - Services
+  "#c7ceea", // Lavender - Miscellaneous
+]
 
 interface CategoryChartProps {
   data: Record<string, number>
