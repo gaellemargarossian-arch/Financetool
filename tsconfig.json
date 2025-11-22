@@ -23,5 +23,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "App.tsx", "src/screens/**/*", "src/components/LoadingScreen.tsx", "src/config/**/*", "src/services/**/*", "src/utils/**/*", "src/i18n/**/*", "src/constants/**/*", "src/types/index.ts", "app.json", "assets"]
 }

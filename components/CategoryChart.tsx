@@ -48,7 +48,6 @@ export function CategoryChart({ data }: CategoryChartProps) {
             label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
             outerRadius={100}
             dataKey="value"
-            labelStyle={{ fill: "#ffffff", fontSize: "12px", fontWeight: "500" }}
           >
             {chartData.map((entry, index) => (
               <Cell 
