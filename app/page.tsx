@@ -1,64 +1,77 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+"use client"
 
-export default function Home() {
+import { useFinanceData } from "@/hooks/useFinanceData"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Wallet, TrendingUp, Target } from "lucide-react"
+import { formatCurrency } from "@/lib/formatCurrency"
+import dynamic from "next/dynamic"
+import { CategoriesList } from "@/components/CategoriesList"
+import { FinancialSummary } from "@/components/FinancialSummary"
+import { FeatureCard } from "@/components/FeatureCard"
+
+const CategoryChart = dynamic(() => import("@/components/CategoryChart").then((mod) => ({ default: mod.CategoryChart })), {
+  ssr: false,
+})
+
+export default function DashboardPage() {
+  const { totalBalance, totalIncome, totalExpenses, categorySpending, transactions, budgets } = useFinanceData()
+  
+  const savings = totalIncome - totalExpenses
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Budget App
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            AI-powered personal finance tool
-          </p>
+    <main className="min-h-screen" style={{ backgroundColor: "#000000" }}>
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
+          <FeatureCard 
+            title="Track your expenses" 
+            icon={<Wallet className="h-16 w-16 text-muted-foreground opacity-40" />}
+          />
+          
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base font-semibold text-foreground">Expenses</CardTitle>
+              <div className="text-3xl font-bold text-foreground mt-2">{formatCurrency(totalExpenses, "AED")}</div>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <CategoryChart data={categorySpending} />
+            </CardContent>
+          </Card>
+
+          <FeatureCard 
+            title="Gain control" 
+            icon={<Target className="h-16 w-16 text-muted-foreground opacity-40" />}
+          />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
           <Card>
-            <CardHeader>
-              <CardTitle>Dashboard</CardTitle>
-              <CardDescription>
-                View your financial overview
-              </CardDescription>
+            <CardHeader className="pb-4">
+              <CardTitle className="text-base font-semibold text-foreground">Categories</CardTitle>
             </CardHeader>
-            <CardContent>
-              <Button className="w-full">View Dashboard</Button>
+            <CardContent className="pt-0">
+              <CategoriesList transactions={transactions} />
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Transactions</CardTitle>
-              <CardDescription>
-                Manage your expenses
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button className="w-full" variant="secondary">View Transactions</Button>
-            </CardContent>
-          </Card>
+          <FeatureCard 
+            title="Create budgets" 
+            icon={<TrendingUp className="h-16 w-16 text-muted-foreground opacity-40" />}
+          />
 
           <Card>
-            <CardHeader>
-              <CardTitle>Budgets</CardTitle>
-              <CardDescription>
-                Set and track budgets
-              </CardDescription>
+            <CardHeader className="pb-4">
+              <CardTitle className="text-base font-semibold text-foreground">Summary</CardTitle>
             </CardHeader>
-            <CardContent>
-              <Button className="w-full" variant="outline">Manage Budgets</Button>
+            <CardContent className="pt-0">
+              <FinancialSummary
+                income={totalIncome}
+                expenses={totalExpenses}
+                savings={savings}
+              />
             </CardContent>
           </Card>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
-            Built with Next.js 14, Tailwind CSS, and shadcn UI
-          </p>
         </div>
       </div>
     </main>
   )
 }
-

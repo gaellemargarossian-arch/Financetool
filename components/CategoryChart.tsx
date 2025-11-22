@@ -1,0 +1,52 @@
+"use client"
+
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"
+import { formatCurrency } from "@/lib/formatCurrency"
+
+const COLORS = ["#00d4ff", "#00ff88", "#ff00ff", "#ffaa00", "#00ffff", "#ff0080", "#00ffaa"]
+
+interface CategoryChartProps {
+  data: Record<string, number>
+}
+
+export function CategoryChart({ data }: CategoryChartProps) {
+  const chartData = Object.entries(data).map(([name, value]) => ({
+    name,
+    value,
+  }))
+
+  if (chartData.length === 0) {
+    return <div className="text-center text-muted-foreground py-8">No spending data available</div>
+  }
+
+  return (
+    <div style={{ width: "100%", height: "300px" }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            labelLine={false}
+            label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+            style={{ fill: "#ffffff", fontSize: "12px", fontWeight: "500" }}
+            outerRadius={80}
+            fill="#8884d8"
+            dataKey="value"
+          >
+            {chartData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip 
+            formatter={(value: number) => formatCurrency(value, "AED")}
+            contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #00d4ff", borderRadius: "8px", color: "#ffffff" }}
+            labelStyle={{ color: "#00d4ff" }}
+          />
+          <Legend wrapperStyle={{ color: "#ffffff" }} />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+

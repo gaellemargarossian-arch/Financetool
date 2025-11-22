@@ -3,10 +3,10 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -52,6 +52,21 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        // 👇 Your custom palette
+        "cold-turkey": {
+          "50": "#f9f7f7",
+          "100": "#f2eeef",
+          "200": "#e8e0e1",
+          "300": "#d4c4c6",
+          "400": "#c0a9ac",
+          "500": "#a88b8f",
+          "600": "#907276",
+          "700": "#785d60",
+          "800": "#654f52",
+          "900": "#564648",
+          "950": "#2c2324",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -78,4 +93,3 @@ const config = {
 } satisfies Config
 
 export default config
-
