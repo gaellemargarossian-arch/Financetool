@@ -1,0 +1,116 @@
+{
+  "common": {
+    "appName": "Budget App",
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "createAccount": "Create Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "netBalance": "Net Balance",
+    "totalIncome": "Total Income",
+    "totalExpenses": "Total Expenses",
+    "topCategories": "Top Categories",
+    "weeklyInsights": "Weekly Insights",
+    "recentTransactions": "Recent Transactions",
+    "noTransactions": "No transactions yet",
+    "addFirstTransaction": "Add your first transaction"
+  },
+  "accounts": {
+    "title": "Accounts",
+    "addAccount": "Add Account",
+    "editAccount": "Edit Account",
+    "accountName": "Account Name",
+    "accountType": "Account Type",
+    "balance": "Balance",
+    "noAccounts": "No accounts yet",
+    "addFirstAccount": "Add your first account"
+  },
+  "transactions": {
+    "title": "Transactions",
+    "addTransaction": "Add Transaction",
+    "editTransaction": "Edit Transaction",
+    "amount": "Amount",
+    "category": "Category",
+    "merchant": "Merchant",
+    "description": "Description",
+    "date": "Date",
+    "type": "Type",
+    "expense": "Expense",
+    "income": "Income",
+    "transfer": "Transfer",
+    "recurring": "Recurring",
+    "recurringPattern": "Recurring Pattern"
+  },
+  "budgets": {
+    "title": "Budgets",
+    "addBudget": "Add Budget",
+    "editBudget": "Edit Budget",
+    "budgetAmount": "Budget Amount",
+    "spent": "Spent",
+    "remaining": "Remaining",
+    "overBudget": "Over Budget",
+    "alertThreshold": "Alert Threshold",
+    "noBudgets": "No budgets set",
+    "setFirstBudget": "Set your first budget"
+  },
+  "reports": {
+    "title": "Reports",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "categoryBreakdown": "Category Breakdown",
+    "trends": "Trends",
+    "insights": "Insights"
+  },
+  "aiCoach": {
+    "title": "AI Financial Coach",
+    "askQuestion": "Ask a question about your finances",
+    "placeholder": "e.g., How much did I spend on coffee last month?",
+    "suggestions": "Suggestions",
+    "analyzing": "Analyzing your finances...",
+    "noData": "Not enough data to analyze"
+  },
+  "notifications": {
+    "budgetAlert": "Budget Alert",
+    "budgetWarning": "You've used {{percentage}}% of your {{category}} budget",
+    "billReminder": "Bill Reminder",
+    "upcomingBill": "{{bill}} is due in {{days}} days",
+    "weeklySummary": "Weekly Summary",
+    "weeklySummaryText": "You spent {{amount}} this week"
+  },
+  "categories": {
+    "rent": "Rent",
+    "dewa": "DEWA",
+    "groceries": "Groceries",
+    "restaurants": "Restaurants",
+    "coffee": "Coffee",
+    "fuel": "Fuel",
+    "telecom": "Telecom",
+    "carPayment": "Car Payment",
+    "shopping": "Shopping",
+    "entertainment": "Entertainment"
+  }
+}
+

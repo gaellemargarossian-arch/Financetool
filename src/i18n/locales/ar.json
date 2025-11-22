@@ -1,0 +1,116 @@
+{
+  "common": {
+    "appName": "تطبيق الميزانية",
+    "welcome": "مرحباً",
+    "loading": "جاري التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "back": "رجوع",
+    "next": "التالي",
+    "done": "تم",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "signOut": "تسجيل الخروج",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "createAccount": "إنشاء حساب",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "dontHaveAccount": "ليس لديك حساب؟"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "netBalance": "الرصيد الصافي",
+    "totalIncome": "إجمالي الدخل",
+    "totalExpenses": "إجمالي المصروفات",
+    "topCategories": "الفئات الرئيسية",
+    "weeklyInsights": "رؤى أسبوعية",
+    "recentTransactions": "المعاملات الأخيرة",
+    "noTransactions": "لا توجد معاملات بعد",
+    "addFirstTransaction": "أضف معاملتك الأولى"
+  },
+  "accounts": {
+    "title": "الحسابات",
+    "addAccount": "إضافة حساب",
+    "editAccount": "تعديل حساب",
+    "accountName": "اسم الحساب",
+    "accountType": "نوع الحساب",
+    "balance": "الرصيد",
+    "noAccounts": "لا توجد حسابات بعد",
+    "addFirstAccount": "أضف حسابك الأول"
+  },
+  "transactions": {
+    "title": "المعاملات",
+    "addTransaction": "إضافة معاملة",
+    "editTransaction": "تعديل معاملة",
+    "amount": "المبلغ",
+    "category": "الفئة",
+    "merchant": "التاجر",
+    "description": "الوصف",
+    "date": "التاريخ",
+    "type": "النوع",
+    "expense": "مصروف",
+    "income": "دخل",
+    "transfer": "تحويل",
+    "recurring": "متكرر",
+    "recurringPattern": "نمط التكرار"
+  },
+  "budgets": {
+    "title": "الميزانيات",
+    "addBudget": "إضافة ميزانية",
+    "editBudget": "تعديل ميزانية",
+    "budgetAmount": "مبلغ الميزانية",
+    "spent": "المنفق",
+    "remaining": "المتبقي",
+    "overBudget": "تجاوز الميزانية",
+    "alertThreshold": "عتبة التنبيه",
+    "noBudgets": "لم يتم تعيين ميزانيات",
+    "setFirstBudget": "حدد ميزانيتك الأولى"
+  },
+  "reports": {
+    "title": "التقارير",
+    "weekly": "أسبوعي",
+    "monthly": "شهري",
+    "yearly": "سنوي",
+    "categoryBreakdown": "تفصيل الفئات",
+    "trends": "الاتجاهات",
+    "insights": "رؤى"
+  },
+  "aiCoach": {
+    "title": "مدرب مالي ذكي",
+    "askQuestion": "اطرح سؤالاً حول أموالك",
+    "placeholder": "مثال: كم أنفقت على القهوة الشهر الماضي؟",
+    "suggestions": "اقتراحات",
+    "analyzing": "جاري تحليل أموالك...",
+    "noData": "لا توجد بيانات كافية للتحليل"
+  },
+  "notifications": {
+    "budgetAlert": "تنبيه الميزانية",
+    "budgetWarning": "لقد استخدمت {{percentage}}% من ميزانية {{category}}",
+    "billReminder": "تذكير بالفاتورة",
+    "upcomingBill": "{{bill}} مستحقة خلال {{days}} أيام",
+    "weeklySummary": "ملخص أسبوعي",
+    "weeklySummaryText": "أنفقت {{amount}} هذا الأسبوع"
+  },
+  "categories": {
+    "rent": "إيجار",
+    "dewa": "ديوا",
+    "groceries": "بقالة",
+    "restaurants": "مطاعم",
+    "coffee": "قهوة",
+    "fuel": "وقود",
+    "telecom": "اتصالات",
+    "carPayment": "قسط السيارة",
+    "shopping": "تسوق",
+    "entertainment": "ترفيه"
+  }
+}
+
