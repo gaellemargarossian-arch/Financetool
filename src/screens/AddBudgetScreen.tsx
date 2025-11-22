@@ -148,7 +148,7 @@ export default function AddBudgetScreen() {
           keyboardType="number-pad"
         />
         <Text style={styles.hint}>
-          You'll receive an alert when you reach this percentage of your budget
+          You&apos;ll receive an alert when you reach this percentage of your budget
         </Text>
 
         <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
